@@ -41,6 +41,7 @@ entity raster_hit_tester is
            ready : out  STD_LOGIC;
            test_x : in  UNSIGNED (9 downto 0);
            test_y : in  UNSIGNED (9 downto 0);
+           run_test : in STD_LOGIC;
            result : out  STD_LOGIC);
 end raster_hit_tester;
 
@@ -53,9 +54,13 @@ begin
     begin
         if clk'event and clk = '1' then
             case state is
+            
                 when idle =>
+                
                 when calc =>
+                
                 when init =>
+                
                 when others => null;
             end case;
         end if;
