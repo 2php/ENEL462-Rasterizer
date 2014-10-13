@@ -8,7 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Sudo/Desktop/ENCE462/ence462_rasterizer/rasterizer.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Sudo/Desktop/ENCE462/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd&quot; into library work</arg>
 </msg>
 
 </messages>
