@@ -29,18 +29,73 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity raster_hit_tester is
+
+entity line_sign_checker is
+    -- This entity tests whether a point lies on the inside of a line.
+    -- When init is high, it will recalculate the constants it needs for the
+    -- calculation based on the two line points input. When init is low, it
+    -- will calculate the result (whether the point test_x, test_y is inside
+    -- the line) every clock cycle.
+    -- Note that init may need more than one cycle - unsure.
+    
     Port ( clk : in STD_LOGIC;
-           t1x : in  UNSIGNED (9 downto 0);
-           t1y : in  UNSIGNED (9 downto 0);
-           t2x : in  UNSIGNED (9 downto 0);
-           t2y : in  UNSIGNED (9 downto 0);
-           t3x : in  UNSIGNED (9 downto 0);
-           t3y : in  UNSIGNED (9 downto 0);
-           init : in  STD_LOGIC;
+           p1x, p1y, p2x, p2y : in UNSIGNED (9 downto 0);
+           test_x, test_y : in UNSIGNED (9 downto 0);
+           init : in STD_LOGIC;
+           result : out STD_LOGIC);
+end line_sign_checker;
+
+
+architecture Behavioural of line_sign_checker is
+    
+    variable a, b, c : SIGNED (20 downto 0);
+    signal p1x2, p1y2, p2x2, p2y2 : UNSIGNED (20 downto 0);
+    signal dist : SIGNED (20 downto 0);
+    
+begin
+    
+    process (clk)
+    begin
+        if clk'event and clk = '1' then
+            if init = '1' then -- Note: this may take more than one clock cycle?
+                -- set constants
+                b := p2x2 - p1x2;
+                a := p1y2 - p2y2;
+                c := b * p2y2 + a * p2x2;
+                c := - c;
+            else
+                -- calc result
+                dist <= a * test_x + b * test_y;
+                if dist >= c then
+                    result <= '1';
+                else
+                    result <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+    
+    p1x2 <= X"00" & p1x; -- Convert to 21 bits signed
+    p1y2 <= X"00" & p1y;
+    p2x2 <= X"00" & p2x;
+    p2y2 <= X"00" & p2y;
+    
+end Behavioural;
+            
+
+
+entity raster_hit_tester is
+    -- This entity combines three line testing entities to provide a containment
+    -- test for a triangle. It has an init state where it allows the line test
+    -- entities to calculate their constants, then a calculation state where it
+    -- generates a result, and an idle state where the result can be read and inputs
+    -- can be changed.
+    
+    Port ( clk : in STD_LOGIC;
+           t1x, t1y, t2x, t2y, t3x, t3y : in  UNSIGNED (9 downto 0);
+           setup : in  STD_LOGIC;
            ready : out  STD_LOGIC;
-           test_x : in  UNSIGNED (9 downto 0);
-           test_y : in  UNSIGNED (9 downto 0);
+           test_x, test_y : in  UNSIGNED (9 downto 0);
            run_test : in STD_LOGIC;
            result : out  STD_LOGIC);
 end raster_hit_tester;
@@ -48,7 +103,46 @@ end raster_hit_tester;
 architecture Behavioral of raster_hit_tester is
     type STATE_TYPE is (idle, calc, init);
     signal state : STATE_TYPE := idle;
+    signal init_sign_checkers : STD_LOGIC;
+    signal res0, res1, res2 : STD_LOGIC;
+    
 begin
+
+    LineTest0: entity line_sign_checker port map (
+        clk => clk,
+        t1x => p1x,
+        t1y => p1y,
+        t2x => p2x,
+        t2y => p2y,
+        test_x => test_x,
+        test_y => test_y,
+        init_sign_checkers => init,
+        res0 => result
+    );
+    
+    LineTest0: entity line_sign_checker port map (
+        clk => clk,
+        t2x => p1x,
+        t2y => p1y,
+        t3x => p2x,
+        t3y => p2y,
+        test_x => test_x,
+        test_y => test_y,
+        init_sign_checkers => init,
+        res1 => result
+    );
+    
+    LineTest0: entity line_sign_checker port map (
+        clk => clk,
+        t3x => p1x,
+        t3y => p1y,
+        t1x => p2x,
+        t1y => p2y,
+        test_x => test_x,
+        test_y => test_y,
+        init_sign_checkers => init,
+        res2 => result
+    );
     
     process (clk)
     begin
@@ -56,10 +150,17 @@ begin
             case state is
             
                 when idle =>
-                
+                    if setup = '1' then
+                        state <= init;
+                    elsif run_test = '1' then
+                        state <= calc;
+                    end if;
+                    
                 when calc =>
-                
+                    state <= idle; -- I expect this to finish within one cycle
+                    
                 when init =>
+                    state <= idle; -- Hopefully this finishes in one cycle, else may need counter
                 
                 when others => null;
             end case;
@@ -67,6 +168,8 @@ begin
     end process;
     
     ready <= '1' when state = idle else '0';
+    init_sign_checkers <= '1' when state = init else '0';
+    result <= res0 = '1' and res1 = '1' and res2 = '1'; -- TODO: check that this is not inverted
 
 end Behavioral;
 

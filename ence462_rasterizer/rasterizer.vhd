@@ -33,6 +33,10 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity rasterizer is
+    -- This unit wraps the rasterizer_iterator to provide the interface seen to
+    -- other units in the system (inputgenerator and outputrenderer).
+    -- It has little function other than decoupling
+
     Port ( 
         clk : in STD_LOGIC;
         -- Signals to Input Generator

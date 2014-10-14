@@ -31,6 +31,10 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity raster_iterator is
+    -- This entity computes the bounds of a given triangle then iterates over each
+    -- fragment within those bounds running the hit tester to see if it should be
+    -- passed out.
+    
     Port ( clk   : in  STD_LOGIC;
            reset : in STD_LOGIC;
     
@@ -79,7 +83,7 @@ architecture Behavioral of raster_iterator is
            t2y : in  UNSIGNED (9 downto 0);
            t3x : in  UNSIGNED (9 downto 0);
            t3y : in  UNSIGNED (9 downto 0);
-           init : in  STD_LOGIC;
+           setup : in  STD_LOGIC;
            ready : out  STD_LOGIC;
            test_x : in  UNSIGNED (9 downto 0);
            test_y : in  UNSIGNED (9 downto 0);
@@ -98,7 +102,7 @@ begin
         t2y => t2y,
         t3x => t3x,
         t3y => t3y,
-        start_hit_test_init => init,
+        start_hit_test_init => setup,
         hit_test_ready => ready,
         frag_x => test_x,
         frag_y => test_y,
