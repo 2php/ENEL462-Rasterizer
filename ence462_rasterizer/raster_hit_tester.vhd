@@ -48,8 +48,8 @@ end line_sign_checker;
 
 architecture Behavioural of line_sign_checker is
     
-    variable a, b, c : SIGNED (20 downto 0);
-    signal p1x2, p1y2, p2x2, p2y2 : UNSIGNED (20 downto 0);
+    signal a, b, c : SIGNED (20 downto 0);
+    signal p1x2, p1y2, p2x2, p2y2, test_x2, test_y2 : UNSIGNED (20 downto 0);
     signal dist : SIGNED (20 downto 0);
     
 begin
@@ -59,13 +59,12 @@ begin
         if clk'event and clk = '1' then
             if init = '1' then -- Note: this may take more than one clock cycle?
                 -- set constants
-                b := p2x2 - p1x2;
-                a := p1y2 - p2y2;
-                c := b * p2y2 + a * p2x2;
-                c := - c;
+                b <= signed(p2x2) - signed(p1x2);
+                a <= signed(p1y2) - signed(p2y2);
+                c <= b * signed(p2y2) + a * signed(p2x2);
             else
                 -- calc result
-                dist <= a * test_x + b * test_y;
+                dist <= a * signed(test_x2) + b * signed(test_y2);
                 if dist >= c then
                     result <= '1';
                 else
@@ -75,13 +74,23 @@ begin
         end if;
     end process;
     
-    p1x2 <= X"00" & p1x; -- Convert to 21 bits signed
-    p1y2 <= X"00" & p1y;
-    p2x2 <= X"00" & p2x;
-    p2y2 <= X"00" & p2y;
+    p1x2 <= resize(unsigned(p1x), 21); -- Convert to 21 bits signed
+    p1y2 <= resize(unsigned(p1y), 21);
+    p2x2 <= resize(unsigned(p2x), 21);
+    p2y2 <= resize(unsigned(p2y), 21);
+    test_x2 <= resize(unsigned(test_x), 21);
+    test_y2 <= resize(unsigned(test_y), 21);
     
 end Behavioural;
             
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+use IEEE.NUMERIC_STD.ALL;
+use WORK.ALL;
 
 
 entity raster_hit_tester is
@@ -106,42 +115,26 @@ architecture Behavioral of raster_hit_tester is
     signal init_sign_checkers : STD_LOGIC;
     signal res0, res1, res2 : STD_LOGIC;
     
+    component line_sign_checker
+        Port ( clk : in STD_LOGIC;
+               p1x, p1y, p2x, p2y : in UNSIGNED (9 downto 0);
+               test_x, test_y : in UNSIGNED (9 downto 0);
+               init : in STD_LOGIC;
+               result : out STD_LOGIC);
+    end component;
+    
 begin
 
-    LineTest0: entity line_sign_checker port map (
-        clk => clk,
-        t1x => p1x,
-        t1y => p1y,
-        t2x => p2x,
-        t2y => p2y,
-        test_x => test_x,
-        test_y => test_y,
-        init_sign_checkers => init,
-        res0 => result
+    LineTest0: line_sign_checker port map (
+        clk, t1x, t1y, t2x, t2y, test_x, test_y, init_sign_checkers, res0
     );
     
-    LineTest0: entity line_sign_checker port map (
-        clk => clk,
-        t2x => p1x,
-        t2y => p1y,
-        t3x => p2x,
-        t3y => p2y,
-        test_x => test_x,
-        test_y => test_y,
-        init_sign_checkers => init,
-        res1 => result
+    LineTest1: line_sign_checker port map (
+        clk, t2x, t2y, t3x, t3y, test_x, test_y, init_sign_checkers, res1
     );
     
-    LineTest0: entity line_sign_checker port map (
-        clk => clk,
-        t3x => p1x,
-        t3y => p1y,
-        t1x => p2x,
-        t1y => p2y,
-        test_x => test_x,
-        test_y => test_y,
-        init_sign_checkers => init,
-        res2 => result
+    LineTest2: line_sign_checker port map (
+        clk, t3x, t3y, t1x, t1y, test_x, test_y, init_sign_checkers, res2
     );
     
     process (clk)
@@ -169,7 +162,7 @@ begin
     
     ready <= '1' when state = idle else '0';
     init_sign_checkers <= '1' when state = init else '0';
-    result <= res0 = '1' and res1 = '1' and res2 = '1'; -- TODO: check that this is not inverted
+    result <= '1' when (res0 = '1' and res1 = '1' and res2 = '1') else '0'; -- TODO: check that this is not inverted
 
 end Behavioral;
 

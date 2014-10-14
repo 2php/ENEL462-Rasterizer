@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-10-13T22:54:50</DateModified>
+  <DateModified>2014-10-15T01:26:22</DateModified>
   <ModuleName>rasterizer</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2014-10-15T01:26:06</SummaryTimeStamp>
   <SavedFilePath>F:/ENEL462-Rasterizer/ence462_rasterizer/iseconfig/rasterizer.xreport</SavedFilePath>
   <ImplementationReportsDirectory>F:/ENEL462-Rasterizer/ence462_rasterizer\</ImplementationReportsDirectory>
   <DateInitialized>2014-10-04T21:35:24</DateInitialized>

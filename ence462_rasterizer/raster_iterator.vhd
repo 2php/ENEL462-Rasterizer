@@ -62,13 +62,17 @@ architecture Behavioral of raster_iterator is
         wait_hit_test_calc,
         next_frag,
         output_ready,
-        output_hold
+        output_hold,
+        finished
     );
     signal state : STATE_TYPE := idle;
     signal start_x : UNSIGNED (9 downto 0);
     signal start_y : UNSIGNED (9 downto 0);
     signal end_x   : UNSIGNED (9 downto 0);
     signal end_y   : UNSIGNED (9 downto 0);
+    
+    signal test_x : UNSIGNED (9 downto 0);
+    signal test_y : UNSIGNED (9 downto 0);
     
     signal start_hit_test_init : STD_LOGIC;
     signal start_hit_test : STD_LOGIC;
@@ -93,28 +97,19 @@ architecture Behavioral of raster_iterator is
     
 begin
 
-    raster_hit_tester : raster_hit_tester
+    HitTester0 : raster_hit_tester
     port map (
-        clk => clk,
-        t1x => t1x,
-        t1y => t1y,
-        t2x => t2x,
-        t2y => t2y,
-        t3x => t3x,
-        t3y => t3y,
-        start_hit_test_init => setup,
-        hit_test_ready => ready,
-        frag_x => test_x,
-        frag_y => test_y,
-        start_hit_test => run_test,
-        hit_test_result => result
+        clk, t1x, t1y, t2x, t2y, t3x, t3y, 
+        start_hit_test_init, hit_test_ready, 
+        test_x, test_y, 
+        start_hit_test, hit_test_result
     );
 
     process (clk)
     
-        function min3(a : UNSIGNED (9 downto 0);
-                      b : UNSIGNED (9 downto 0);
-                      c : UNSIGNED (9 downto 0)) return UNSIGNED (9 downto 0) is
+        function min3(a : UNSIGNED;
+                      b : UNSIGNED;
+                      c : UNSIGNED) return UNSIGNED is
         begin
             if a < b and a < c then return a;
             elsif b < a and b < c then return b;
@@ -122,9 +117,9 @@ begin
             end if;
         end function min3;
         
-        function max3(a : UNSIGNED (9 downto 0);
-                      b : UNSIGNED (9 downto 0);
-                      c : UNSIGNED (9 downto 0)) return UNSIGNED (9 downto 0) is
+        function max3(a : UNSIGNED;
+                      b : UNSIGNED;
+                      c : UNSIGNED) return UNSIGNED is
         begin
             if a > b and a > c then return a;
             elsif b > a and b > c then return b;
@@ -137,8 +132,8 @@ begin
             case state is
             
                 when idle =>
-                    frag_x <= "0000000000";
-                    frag_y <= "0000000000";
+                    test_x <= "0000000000";
+                    test_y <= "0000000000";
                     if continue = '1' then
                         state <= compute_bounds;
                     end if;
@@ -151,8 +146,8 @@ begin
                     state <= init_hit_tester;
                     
                 when init_hit_tester =>
-                    frag_x <= start_x;
-                    cur_y <= start_y;
+                    test_x <= start_x;
+                    test_y <= start_y;
                     assert 0 <= start_x and start_x < "1111111111"; -- Todo: change to resolution?
                     assert 0 <= start_y and start_y < "1111111111"; -- Todo: change to resolution?
                     if hit_test_ready = '0' then
@@ -165,8 +160,8 @@ begin
                     end if;
                     
                 when hit_test =>
-                    assert start_x <= frag_x and start_y <= frag_y;
-                    assert end_x >= frag_x and end_y >= frag_y;
+                    assert start_x <= test_x and start_y <= test_y;
+                    assert end_x >= test_x and end_y >= test_y;
                     if hit_test_ready = '0' then
                         state <= wait_hit_test_calc;
                     end if;
@@ -174,21 +169,23 @@ begin
                 when wait_hit_test_calc =>
                     if hit_test_ready = '1' and hit_test_result = '1' then
                         state <= output_ready;
+                        frag_x <= test_x;
+                        frag_y <= test_y;
                     elsif hit_test_ready = '1' and hit_test_result = '0' then
                         state <= next_frag;
                     end if;
                     
                 when next_frag =>
-                    if frag_y > end_y then
+                    if test_y > end_y then
                         state <= finished;
                     else
                         state <= hit_test;
                     end if;
-                    if frag_x > end_x then
-                        frag_x <= start_x;
-                        frag_y <= frag_y + 1;
+                    if test_x > end_x then
+                        test_x <= start_x;
+                        test_y <= test_y + 1;
                     else
-                        frag_x <= frag_x + 1;
+                        test_x <= test_x + 1;
                     end if;
                     
                 when output_ready =>

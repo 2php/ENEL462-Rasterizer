@@ -85,21 +85,12 @@ architecture Behavioral of rasterizer is
     end component;
     
 begin
-    raster_iterator : raster_iterator
+    Iterator0 : raster_iterator
     port map (
-        clk => clk,
-        reset_iter => reset,
-        t1x => t1x,
-        t1y => t1y,
-        t2x => t2x,
-        t2y => t2y,
-        t3x => t3x,
-        t3y => t3y,
-        frag_x => frag_x,
-        frag_y => frag_y,
-        frag_ready => frag_out,
-        iter_complete => complete,
-        continue_iter => continue
+        clk, reset_iter,
+        t1x, t1y, t2x, t2y, t3x, t3y,
+        frag_x, frag_y,
+        frag_ready, iter_complete, continue_iter
     );
     
     process (clk)

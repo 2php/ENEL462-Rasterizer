@@ -1,0 +1,3 @@
+vhdl work "raster_hit_tester.vhd"
+vhdl work "raster_iterator.vhd"
+vhdl work "rasterizer.vhd"

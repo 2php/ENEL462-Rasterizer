@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="1748" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd</arg>&quot; line <arg fmt="%d" index="2">151</arg>: VHDL Assertion Statement with non constant condition is ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="1748" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd</arg>&quot; line <arg fmt="%d" index="2">152</arg>: VHDL Assertion Statement with non constant condition is ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="1748" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd</arg>&quot; line <arg fmt="%d" index="2">163</arg>: VHDL Assertion Statement with non constant condition is ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="1748" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd</arg>&quot; line <arg fmt="%d" index="2">164</arg>: VHDL Assertion Statement with non constant condition is ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">c</arg>&gt; has a width of <arg fmt="%d" index="4">21</arg> bits but assigned expression is <arg fmt="%d" index="5">42</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd</arg>&quot; line <arg fmt="%d" index="2">67</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">dist</arg>&gt; has a width of <arg fmt="%d" index="4">21</arg> bits but assigned expression is <arg fmt="%d" index="5">42</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="643" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd</arg>&quot; line <arg fmt="%d" index="2">67</arg>: The result of a <arg fmt="%d" index="3">21</arg>x<arg fmt="%d" index="4">21</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">21</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+</msg>
+
+<msg type="warning" file="Xst" num="643" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd</arg>&quot; line <arg fmt="%d" index="2">67</arg>: The result of a <arg fmt="%d" index="3">21</arg>x<arg fmt="%d" index="4">21</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">21</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+</msg>
+
+<msg type="warning" file="Xst" num="643" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: The result of a <arg fmt="%d" index="3">21</arg>x<arg fmt="%d" index="4">21</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">21</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+</msg>
+
+<msg type="warning" file="Xst" num="643" delta="new" >&quot;<arg fmt="%s" index="1">F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: The result of a <arg fmt="%d" index="3">21</arg>x<arg fmt="%d" index="4">21</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">21</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+</msg>
+
+<msg type="warning" file="Xst" num="1306" delta="new" >Output &lt;<arg fmt="%s" index="1">start_read</arg>&gt; is never assigned.
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_c_mult0000</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">Mmult_c_mult0001</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">HitTester0/LineTest0/Mmult_dist_mult0000</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">HitTester0/LineTest0/Mmult_dist_mult0001</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">HitTester0/LineTest1/Mmult_dist_mult0000</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">HitTester0/LineTest1/Mmult_dist_mult0001</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">HitTester0/LineTest2/Mmult_dist_mult0000</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="info" file="Xst" num="2385" delta="new" >HDL ADVISOR - You can improve the performance of the multiplier <arg fmt="%s" index="1">HitTester0/LineTest2/Mmult_dist_mult0001</arg> by adding <arg fmt="%d" index="2">2</arg> register level(s).
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">HitTester0/LineTest2/Mmult_dist_mult00011_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">raster_iterator</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">HitTester0/LineTest2/Mmult_dist_mult00001_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">raster_iterator</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">HitTester0/LineTest2/Mmult_dist_mult0000_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">9 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult0000_8&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_7&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_6&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_5&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_4&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_3&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_2&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_1&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0000_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_2&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_3&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_5&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_6&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_7&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_y_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00011_10&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">HitTester0/LineTest2/Mmult_dist_mult0001_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">9 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult0001_8&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_7&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_6&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_5&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_4&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_3&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_2&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_1&gt; &lt;HitTester0/LineTest2/Mmult_dist_mult0001_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_2&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_3&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_4&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_5&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_6&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_7&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_8&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">test_x_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">raster_iterator</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;HitTester0/LineTest2/Mmult_dist_mult00001_10&gt; </arg>
+</msg>
+
+</messages>
+

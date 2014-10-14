@@ -1,0 +1,675 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: rasterizer.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "rasterizer.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "rasterizer"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : rasterizer
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd" in Library work.
+Architecture behavioural of Entity line_sign_checker is up to date.
+Architecture behavioral of Entity raster_hit_tester is up to date.
+Compiling vhdl file "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd" in Library work.
+Architecture behavioral of Entity raster_iterator is up to date.
+Compiling vhdl file "F:/ENEL462-Rasterizer/ence462_rasterizer/rasterizer.vhd" in Library work.
+Entity <rasterizer> compiled.
+Entity <rasterizer> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <rasterizer> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <raster_iterator> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <raster_hit_tester> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <line_sign_checker> in library <work> (architecture <behavioural>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <rasterizer> in library <work> (Architecture <Behavioral>).
+Entity <rasterizer> analyzed. Unit <rasterizer> generated.
+
+Analyzing Entity <raster_iterator> in library <work> (Architecture <behavioral>).
+WARNING:Xst:1748 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd" line 151: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd" line 152: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd" line 163: VHDL Assertion Statement with non constant condition is ignored.
+WARNING:Xst:1748 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd" line 164: VHDL Assertion Statement with non constant condition is ignored.
+Entity <raster_iterator> analyzed. Unit <raster_iterator> generated.
+
+Analyzing Entity <raster_hit_tester> in library <work> (Architecture <behavioral>).
+Entity <raster_hit_tester> analyzed. Unit <raster_hit_tester> generated.
+
+Analyzing Entity <line_sign_checker> in library <work> (Architecture <behavioural>).
+WARNING:Xst:1610 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd" line 64: Width mismatch. <c> has a width of 21 bits but assigned expression is 42-bit wide.
+WARNING:Xst:1610 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd" line 67: Width mismatch. <dist> has a width of 21 bits but assigned expression is 42-bit wide.
+Entity <line_sign_checker> analyzed. Unit <line_sign_checker> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <line_sign_checker>.
+    Related source file is "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd".
+WARNING:Xst:643 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd" line 67: The result of a 21x21-bit multiplication is partially used. Only the 21 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd" line 67: The result of a 21x21-bit multiplication is partially used. Only the 21 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd" line 64: The result of a 21x21-bit multiplication is partially used. Only the 21 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd" line 64: The result of a 21x21-bit multiplication is partially used. Only the 21 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 1-bit register for signal <result>.
+    Found 21-bit register for signal <a>.
+    Found 21-bit subtractor for signal <a$sub0000> created at line 63.
+    Found 21-bit register for signal <b>.
+    Found 21-bit subtractor for signal <b$sub0000> created at line 62.
+    Found 21-bit register for signal <c>.
+    Found 21-bit adder for signal <c$add0000> created at line 64.
+    Found 21x21-bit multiplier for signal <c$mult0000> created at line 64.
+    Found 21x21-bit multiplier for signal <c$mult0001> created at line 64.
+    Found 21-bit register for signal <dist>.
+    Found 21-bit adder for signal <dist$add0000> created at line 67.
+    Found 21x21-bit multiplier for signal <dist$mult0000> created at line 67.
+    Found 21x21-bit multiplier for signal <dist$mult0001> created at line 67.
+    Found 21-bit comparator greatequal for signal <result$cmp_ge0000> created at line 68.
+    Summary:
+	inferred  85 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   4 Multiplier(s).
+	inferred   1 Comparator(s).
+Unit <line_sign_checker> synthesized.
+
+
+Synthesizing Unit <raster_hit_tester>.
+    Related source file is "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_hit_tester.vhd".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <raster_hit_tester> synthesized.
+
+
+Synthesizing Unit <raster_iterator>.
+    Related source file is "F:/ENEL462-Rasterizer/ence462_rasterizer/raster_iterator.vhd".
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 20                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 10-bit register for signal <frag_x>.
+    Found 10-bit register for signal <frag_y>.
+    Found 10-bit register for signal <end_x>.
+    Found 10-bit comparator greater for signal <end_x$cmp_gt0000> created at line 124.
+    Found 10-bit comparator greater for signal <end_x$cmp_gt0001> created at line 124.
+    Found 10-bit comparator greater for signal <end_x$cmp_gt0002> created at line 124.
+    Found 10-bit comparator greater for signal <end_x$cmp_gt0003> created at line 124.
+    Found 10-bit register for signal <end_y>.
+    Found 10-bit comparator greater for signal <end_y$cmp_gt0000> created at line 124.
+    Found 10-bit comparator greater for signal <end_y$cmp_gt0001> created at line 124.
+    Found 10-bit comparator greater for signal <end_y$cmp_gt0002> created at line 124.
+    Found 10-bit comparator greater for signal <end_y$cmp_gt0003> created at line 124.
+    Found 10-bit register for signal <start_x>.
+    Found 10-bit comparator less for signal <start_x$cmp_lt0000> created at line 114.
+    Found 10-bit comparator less for signal <start_x$cmp_lt0001> created at line 114.
+    Found 10-bit comparator less for signal <start_x$cmp_lt0002> created at line 114.
+    Found 10-bit comparator less for signal <start_x$cmp_lt0003> created at line 114.
+    Found 10-bit register for signal <start_y>.
+    Found 10-bit comparator less for signal <start_y$cmp_lt0000> created at line 114.
+    Found 10-bit comparator less for signal <start_y$cmp_lt0001> created at line 114.
+    Found 10-bit comparator less for signal <start_y$cmp_lt0002> created at line 114.
+    Found 10-bit comparator less for signal <start_y$cmp_lt0003> created at line 114.
+    Found 10-bit comparator greater for signal <state$cmp_gt0000> created at line 179.
+    Found 10-bit register for signal <test_x>.
+    Found 10-bit adder for signal <test_x$addsub0000> created at line 188.
+    Found 10-bit comparator greater for signal <test_x$cmp_gt0000> created at line 184.
+    Found 10-bit register for signal <test_y>.
+    Found 10-bit adder for signal <test_y$addsub0000> created at line 186.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  80 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  18 Comparator(s).
+Unit <raster_iterator> synthesized.
+
+
+Synthesizing Unit <rasterizer>.
+    Related source file is "F:/ENEL462-Rasterizer/ence462_rasterizer/rasterizer.vhd".
+WARNING:Xst:1306 - Output <start_read> is never assigned.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <rasterizer> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 12
+ 21x21-bit multiplier                                  : 12
+# Adders/Subtractors                                   : 14
+ 10-bit adder                                          : 2
+ 21-bit adder                                          : 6
+ 21-bit subtractor                                     : 6
+# Registers                                            : 23
+ 1-bit register                                        : 3
+ 10-bit register                                       : 8
+ 21-bit register                                       : 12
+# Comparators                                          : 21
+ 10-bit comparator greater                             : 10
+ 10-bit comparator less                                : 8
+ 21-bit comparator greatequal                          : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:3]> with gray encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ idle         | 000
+ starting     | 001
+ running      | 011
+ output_ready | 010
+ output_hold  | 110
+--------------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <Iterator0/state/FSM> on signal <state[1:10]> with one-hot encoding.
+----------------------------------
+ State              | Encoding
+----------------------------------
+ idle               | 0000000001
+ compute_bounds     | 0000000010
+ init_hit_tester    | 0000000100
+ wait_hit_test_init | 0000001000
+ hit_test           | 0000010000
+ wait_hit_test_calc | 0000100000
+ next_frag          | 0010000000
+ output_ready       | 0001000000
+ output_hold        | 1000000000
+ finished           | 0100000000
+----------------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <Iterator0/HitTester0/state/FSM> on signal <state[1:3]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 001
+ calc  | 100
+ init  | 010
+-------------------
+
+Synthesizing (advanced) Unit <line_sign_checker>.
+	Found pipelined multiplier on signal <c_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <b>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <c_mult0001>:
+		- 1 pipeline level(s) found in a register on signal <a>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_c_mult0000 by adding 2 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_c_mult0001 by adding 2 register level(s).
+Unit <line_sign_checker> synthesized (advanced).
+
+Synthesizing (advanced) Unit <raster_iterator>.
+	Found pipelined multiplier on signal <HitTester0/LineTest0/dist_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <HitTester0/LineTest0/a>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <test_x>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <HitTester0/LineTest0/dist_mult0001>:
+		- 1 pipeline level(s) found in a register on signal <HitTester0/LineTest0/b>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <test_y>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <HitTester0/LineTest1/dist_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <HitTester0/LineTest1/a>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <test_x>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <HitTester0/LineTest1/dist_mult0001>:
+		- 1 pipeline level(s) found in a register on signal <HitTester0/LineTest1/b>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <test_y>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <HitTester0/LineTest2/dist_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <HitTester0/LineTest2/a>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <test_x>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <HitTester0/LineTest2/dist_mult0001>:
+		- 1 pipeline level(s) found in a register on signal <HitTester0/LineTest2/b>.
+		Pushing register(s) into the multiplier macro.
+
+		- 1 pipeline level(s) found in a register on signal <test_y>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier HitTester0/LineTest0/Mmult_dist_mult0000 by adding 2 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier HitTester0/LineTest0/Mmult_dist_mult0001 by adding 2 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier HitTester0/LineTest1/Mmult_dist_mult0000 by adding 2 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier HitTester0/LineTest1/Mmult_dist_mult0001 by adding 2 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier HitTester0/LineTest2/Mmult_dist_mult0000 by adding 2 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier HitTester0/LineTest2/Mmult_dist_mult0001 by adding 2 register level(s).
+Unit <raster_iterator> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 12
+ 21x11-bit registered multiplier                       : 12
+# Adders/Subtractors                                   : 14
+ 10-bit adder                                          : 2
+ 21-bit adder                                          : 6
+ 21-bit subtractor                                     : 6
+# Registers                                            : 224
+ Flip-Flops                                            : 224
+# Comparators                                          : 21
+ 10-bit comparator greater                             : 10
+ 10-bit comparator less                                : 8
+ 21-bit comparator greatequal                          : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <HitTester0/LineTest2/Mmult_dist_mult00011_0> (without init value) has a constant value of 0 in block <raster_iterator>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <HitTester0/LineTest2/Mmult_dist_mult00001_0> (without init value) has a constant value of 0 in block <raster_iterator>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <test_y_9> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_1> 
+INFO:Xst:2261 - The FF/Latch <HitTester0/LineTest2/Mmult_dist_mult0000_9> in Unit <raster_iterator> is equivalent to the following 9 FFs/Latches, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult0000_8> <HitTester0/LineTest2/Mmult_dist_mult0000_7> <HitTester0/LineTest2/Mmult_dist_mult0000_6> <HitTester0/LineTest2/Mmult_dist_mult0000_5> <HitTester0/LineTest2/Mmult_dist_mult0000_4> <HitTester0/LineTest2/Mmult_dist_mult0000_3> <HitTester0/LineTest2/Mmult_dist_mult0000_2> <HitTester0/LineTest2/Mmult_dist_mult0000_1> <HitTester0/LineTest2/Mmult_dist_mult0000_0> 
+INFO:Xst:2261 - The FF/Latch <test_y_8> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_2> 
+INFO:Xst:2261 - The FF/Latch <test_y_7> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_3> 
+INFO:Xst:2261 - The FF/Latch <test_y_6> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_4> 
+INFO:Xst:2261 - The FF/Latch <test_y_5> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_5> 
+INFO:Xst:2261 - The FF/Latch <test_y_4> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_6> 
+INFO:Xst:2261 - The FF/Latch <test_y_3> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_7> 
+INFO:Xst:2261 - The FF/Latch <test_y_2> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_8> 
+INFO:Xst:2261 - The FF/Latch <test_y_1> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_9> 
+INFO:Xst:2261 - The FF/Latch <test_y_0> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00011_10> 
+INFO:Xst:2261 - The FF/Latch <HitTester0/LineTest2/Mmult_dist_mult0001_9> in Unit <raster_iterator> is equivalent to the following 9 FFs/Latches, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult0001_8> <HitTester0/LineTest2/Mmult_dist_mult0001_7> <HitTester0/LineTest2/Mmult_dist_mult0001_6> <HitTester0/LineTest2/Mmult_dist_mult0001_5> <HitTester0/LineTest2/Mmult_dist_mult0001_4> <HitTester0/LineTest2/Mmult_dist_mult0001_3> <HitTester0/LineTest2/Mmult_dist_mult0001_2> <HitTester0/LineTest2/Mmult_dist_mult0001_1> <HitTester0/LineTest2/Mmult_dist_mult0001_0> 
+INFO:Xst:2261 - The FF/Latch <test_x_9> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_1> 
+INFO:Xst:2261 - The FF/Latch <test_x_8> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_2> 
+INFO:Xst:2261 - The FF/Latch <test_x_7> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_3> 
+INFO:Xst:2261 - The FF/Latch <test_x_6> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_4> 
+INFO:Xst:2261 - The FF/Latch <test_x_5> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_5> 
+INFO:Xst:2261 - The FF/Latch <test_x_4> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_6> 
+INFO:Xst:2261 - The FF/Latch <test_x_3> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_7> 
+INFO:Xst:2261 - The FF/Latch <test_x_2> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_8> 
+INFO:Xst:2261 - The FF/Latch <test_x_1> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_9> 
+INFO:Xst:2261 - The FF/Latch <test_x_0> in Unit <raster_iterator> is equivalent to the following FF/Latch, which will be removed : <HitTester0/LineTest2/Mmult_dist_mult00001_10> 
+
+Optimizing unit <rasterizer> ...
+
+Optimizing unit <raster_iterator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block rasterizer, actual ratio is 12.
+FlipFlop Iterator0/test_x_1 has been replicated 1 time(s)
+FlipFlop Iterator0/test_x_2 has been replicated 1 time(s)
+FlipFlop Iterator0/test_x_3 has been replicated 1 time(s)
+FlipFlop Iterator0/test_x_4 has been replicated 1 time(s)
+FlipFlop Iterator0/test_x_5 has been replicated 1 time(s)
+FlipFlop Iterator0/test_y_1 has been replicated 1 time(s)
+FlipFlop Iterator0/test_y_2 has been replicated 1 time(s)
+FlipFlop Iterator0/test_y_3 has been replicated 1 time(s)
+FlipFlop Iterator0/test_y_4 has been replicated 1 time(s)
+FlipFlop Iterator0/test_y_5 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 258
+ Flip-Flops                                            : 258
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : rasterizer.ngr
+Top Level Output File Name         : rasterizer
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 85
+
+Cell Usage :
+# BELS                             : 2513
+#      GND                         : 1
+#      INV                         : 17
+#      LUT1                        : 20
+#      LUT2                        : 600
+#      LUT2_D                      : 2
+#      LUT3                        : 79
+#      LUT4                        : 256
+#      LUT4_D                      : 11
+#      LUT4_L                      : 15
+#      MULT_AND                    : 148
+#      MUXCY                       : 783
+#      MUXF5                       : 4
+#      VCC                         : 1
+#      XORCY                       : 576
+# FlipFlops/Latches                : 258
+#      FD                          : 38
+#      FDE                         : 213
+#      FDRS                        : 3
+#      FDS                         : 3
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 83
+#      IBUF                        : 62
+#      OBUF                        : 21
+# MULTs                            : 20
+#      MULT18X18SIO                : 20
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      533  out of   4656    11%  
+ Number of Slice Flip Flops:            258  out of   9312     2%  
+ Number of 4 input LUTs:               1000  out of   9312    10%  
+ Number of IOs:                          85
+ Number of bonded IOBs:                  84  out of    232    36%  
+ Number of MULT18X18SIOs:                20  out of     20   100%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 278   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 14.931ns (Maximum Frequency: 66.975MHz)
+   Minimum input arrival time before clock: 12.201ns
+   Maximum output required time after clock: 5.904ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 14.931ns (frequency: 66.975MHz)
+  Total number of paths / destination ports: 6105667 / 478
+-------------------------------------------------------------------------
+Delay:               14.931ns (Levels of Logic = 23)
+  Source:            Iterator0/test_x_3_1 (FF)
+  Destination:       Iterator0/HitTester0/LineTest2/dist_20 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Iterator0/test_x_3_1 to Iterator0/HitTester0/LineTest2/dist_20
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              17   0.591   1.051  Iterator0/test_x_3_1 (Iterator0/test_x_3_1)
+     MULT_AND:I1->LO       0   0.741   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Mmult_dist_mult0000_ff_31_x_Mmult_dist_mult0000_ff_4_mand (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Mmult_dist_mult0000_ff_31_x_Mmult_dist_mult0000_ff_4_mand1)
+     MUXCY:DI->O           1   0.888   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<3> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<4> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<5> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<6> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<7> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<8> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<9> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<10> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<11> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_cy<11>)
+     XORCY:CI->O           1   0.804   0.595  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd2_xor<12> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd_162)
+     LUT2:I0->O            1   0.704   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd6_lut<14> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd6_lut<14>)
+     MUXCY:S->O            1   0.464   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd6_cy<14> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd6_cy<14>)
+     XORCY:CI->O           1   0.804   0.499  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd6_xor<15> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd_176)
+     LUT2:I1->O            1   0.704   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd9_lut<16> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd9_lut<16>)
+     MUXCY:S->O            1   0.464   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd9_cy<16> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd9_cy<16>)
+     XORCY:CI->O           1   0.804   0.499  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd9_xor<17> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd_189)
+     LUT2:I1->O            1   0.704   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd10_lut<18> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd10_lut<18>)
+     MUXCY:S->O            1   0.464   0.000  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd10_cy<18> (Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd10_cy<18>)
+     XORCY:CI->O           1   0.804   0.595  Iterator0/HitTester0/LineTest2/Mmult_dist_mult0000_Madd10_xor<19> (Iterator0/HitTester0/LineTest2/dist_mult0000<19>)
+     LUT2:I0->O            1   0.704   0.000  Iterator0/HitTester0/LineTest2/Madd_dist_add0000_lut<19> (Iterator0/HitTester0/LineTest2/Madd_dist_add0000_lut<19>)
+     MUXCY:S->O            0   0.464   0.000  Iterator0/HitTester0/LineTest2/Madd_dist_add0000_cy<19> (Iterator0/HitTester0/LineTest2/Madd_dist_add0000_cy<19>)
+     XORCY:CI->O           1   0.804   0.000  Iterator0/HitTester0/LineTest2/Madd_dist_add0000_xor<20> (Iterator0/HitTester0/LineTest2/dist_add0000<20>)
+     FDE:D                     0.308          Iterator0/HitTester0/LineTest2/dist_20
+    ----------------------------------------
+    Total                     14.931ns (11.692ns logic, 3.239ns route)
+                                       (78.3% logic, 21.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 28250 / 481
+-------------------------------------------------------------------------
+Offset:              12.201ns (Levels of Logic = 7)
+  Source:            t1x<9> (PAD)
+  Destination:       Iterator0/HitTester0/LineTest2/c_20 (FF)
+  Destination Clock: clk rising
+
+  Data Path: t1x<9> to Iterator0/HitTester0/LineTest2/c_20
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   1.218   0.933  t1x_9_IBUF (t1x_9_IBUF)
+     MULT18X18SIO:B9->P17    3   4.873   0.610  Iterator0/HitTester0/LineTest2/Mmult_c_mult0001 (Iterator0/HitTester0/LineTest2/Mmult_c_mult0001_P_to_Adder_A_17)
+     LUT4_D:I1->O          1   0.704   0.455  Iterator0/HitTester0/LineTest2/Mmult_c_mult00010_Madd_cy<18>11 (Iterator0/HitTester0/LineTest2/Mmult_c_mult00010_Madd_cy<18>)
+     LUT3:I2->O            1   0.704   0.424  Iterator0/HitTester0/LineTest2/Madd_c_add0000_lut<19>_SW0 (N63)
+     LUT4:I3->O            1   0.704   0.000  Iterator0/HitTester0/LineTest2/Madd_c_add0000_lut<19> (Iterator0/HitTester0/LineTest2/Madd_c_add0000_lut<19>)
+     MUXCY:S->O            0   0.464   0.000  Iterator0/HitTester0/LineTest2/Madd_c_add0000_cy<19> (Iterator0/HitTester0/LineTest2/Madd_c_add0000_cy<19>)
+     XORCY:CI->O           1   0.804   0.000  Iterator0/HitTester0/LineTest2/Madd_c_add0000_xor<20> (Iterator0/HitTester0/LineTest2/c_add0000<20>)
+     FDE:D                     0.308          Iterator0/HitTester0/LineTest2/c_20
+    ----------------------------------------
+    Total                     12.201ns (9.779ns logic, 2.422ns route)
+                                       (80.1% logic, 19.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 23 / 21
+-------------------------------------------------------------------------
+Offset:              5.904ns (Levels of Logic = 2)
+  Source:            state_FSM_FFd3 (FF)
+  Destination:       rasterizer_busy (PAD)
+  Source Clock:      clk rising
+
+  Data Path: state_FSM_FFd3 to rasterizer_busy
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q             10   0.591   0.917  state_FSM_FFd3 (state_FSM_FFd3)
+     LUT3:I2->O            1   0.704   0.420  state_FSM_Out21 (rasterizer_busy_OBUF)
+     OBUF:I->O                 3.272          rasterizer_busy_OBUF (rasterizer_busy)
+    ----------------------------------------
+    Total                      5.904ns (4.567ns logic, 1.337ns route)
+                                       (77.4% logic, 22.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.90 secs
+ 
+--> 
+
+Total memory usage is 298260 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
+Number of infos    :   30 (   0 filtered)
+
